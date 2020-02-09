@@ -1,0 +1,106 @@
+﻿@model DocumentFinder.Models.DOCUMENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DOCUMENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DocID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocManuf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocManuf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocCatg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocCatg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocWONum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocWONum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocPONum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocPONum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocProjMgr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocProjMgr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocEqpAmt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocEqpAmt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DocDescr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocDescr)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UniqueDocID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

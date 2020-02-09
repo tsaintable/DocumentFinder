@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DocumentFinder.Models.DOCUMENT>
+
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.DocType).Titled("Type");
+        columns.Add(model => model.DocName).Titled("Name");
+        columns.Add(model => model.DocManuf).Titled("Mfg");
+        columns.Add(model => model.DocCatg).Titled("Catgy");
+        columns.Add(model => model.DocWONum).Titled("WO");
+        columns.Add(model => model.DocPONum).Titled("PO");
+        columns.Add(model => model.DocDate).Titled("Date").Formatted("{0:d}");
+        columns.Add(model => model.DocProjMgr).Titled("ProjMgr");
+        columns.Add(model => model.DocEqpAmt).Titled("Amount");
+        columns.Add(model => model.DocDescr).Titled("Description");
+
+    })
+    .Empty("No data found.")
+    .Filterable()
+    .Sortable()
+    .Pageable(pager =>
+    {
+        pager.PageSizes = new Dictionary<Int32, String> { { 25, "25" }, { 50, "50" }, { 75, "75" }, { 100, "100" } };
+        pager.ShowPageSizes = true;
+        pager.PagesToDisplay = 10;
+        pager.CurrentPage = 1;
+        pager.RowsPerPage = 25;
+    })
+    .Attributed(new { id = "DocTable" })
+
+)

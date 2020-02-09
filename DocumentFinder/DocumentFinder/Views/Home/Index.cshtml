@@ -1,0 +1,24 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Business Document Management</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<input id="GridSearch" class="form-control" style="margin-bottom:10px;" placeholder="Search" />
+
+
+@Html.AjaxGrid(Url.Action("IndexGrid"))
+
+<script>
+    document.getElementById('GridSearch').addEventListener('input', function () {
+        var grid = new MvcGrid(document.querySelector('.mvc-grid'));
+        grid.query.set('search', this.value);
+
+        grid.reload();
+    });
+</script>

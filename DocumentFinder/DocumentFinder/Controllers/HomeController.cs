@@ -34,7 +34,15 @@ namespace DocumentFinder.Controllers
         }
         public IEnumerable<DOCUMENT> repository(String search)
         {
-            return db.Set<DOCUMENT>().Where(x => x.DocName.Contains(search));
+            return db.Set<DOCUMENT>().Where(x => x.DocType.ToString().Contains(search) ||
+                                                 x.DocName.ToString().Contains(search) ||
+                                                 x.DocManuf.ToString().Contains(search) ||
+                                                 x.DocCatg.ToString().Contains(search) ||
+                                                 x.DocWONum.ToString().Equals(search) ||
+                                                 x.DocPONum.ToString().Equals(search) ||
+                                                 x.DocProjMgr.ToString().Contains(search) ||
+                                                 x.DocEqpAmt.ToString().Equals(search) ||
+                                                 x.DocDescr.ToString().Contains(search));
         }
         public ActionResult About()
         {

@@ -1,2 +1,2 @@
 # DocumentFinder
- .NET web app used to track business docs.
+Generic .NET web app used to track business docs.

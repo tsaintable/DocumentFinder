@@ -10,10 +10,9 @@ namespace DocumentFinder.Controllers
     public class HomeController : Controller
     {
         DBModel db = new DBModel();
-        AModel repo = new AModel();
         public ActionResult Index()
         {
-            var result = new AModel
+            AModel result = new AModel
             {
                 IE_DOC = db.Set<DOCUMENT>().ToList(),
             };
@@ -29,12 +28,13 @@ namespace DocumentFinder.Controllers
             }
             else
             {
-                return PartialView("_IndexGrid", repository(search));
+                return PartialView("_IndexGrid", Repository(search));
             }
         }
-        public IEnumerable<DOCUMENT> repository(String search)
+        public IEnumerable<DOCUMENT> Repository(String search)
         {
-            return db.Set<DOCUMENT>().Where(x => x.DocType.ToString().Contains(search) ||
+            return db.Set<DOCUMENT>().Where(x => x.DocID.ToString().Contains(search) ||
+                                                 x.DocType.ToString().Contains(search) ||
                                                  x.DocName.ToString().Contains(search) ||
                                                  x.DocManuf.ToString().Contains(search) ||
                                                  x.DocCatg.ToString().Contains(search) ||

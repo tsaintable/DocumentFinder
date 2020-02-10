@@ -9,6 +9,7 @@ namespace DocumentFinder.Models
     public partial class DOCUMENT_CONTENT
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UniqueContentID { get; set; }
 
         public Guid UDocIDContact { get; set; }

@@ -9,8 +9,9 @@
     .Grid(Model)
     .Build(columns =>
     {
-        columns.Add(model => model.DocType).Titled("Type");
+        columns.Add(model => model.DocID).Titled("Type");
         columns.Add(model => DetailsHelper(model)).Titled("");
+        columns.Add(model => model.DocType).Titled("Type");
         columns.Add(model => model.DocName).Titled("Name");
         columns.Add(model => model.DocManuf).Titled("Mfg");
         columns.Add(model => model.DocCatg).Titled("Catgy");

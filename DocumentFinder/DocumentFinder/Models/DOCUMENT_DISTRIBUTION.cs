@@ -9,6 +9,7 @@ namespace DocumentFinder.Models
     public partial class DOCUMENT_DISTRIBUTION
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid UniqueDistrID { get; set; }
 
         public Guid UDocIDDistribution { get; set; }

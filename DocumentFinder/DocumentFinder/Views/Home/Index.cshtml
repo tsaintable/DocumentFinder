@@ -9,7 +9,11 @@
 <p>
     <a href="@Url.Action("Create", "Document")" class="btn btn-success">Create New</a>
 </p>
-<input id="GridSearch" class="form-control" style="margin-bottom:10px;" placeholder="Search" />
+<form style="display: flex;margin-bottom:10px;">
+    <input id="GridSearch" class="form-control" placeholder="Search" />
+    <input type="button" id="clear" class="btn btn-primary" value="Reset" style="margin-left:10px;"/>
+</form>
+
 
 
 @Html.AjaxGrid(Url.Action("IndexGrid"))
@@ -18,7 +22,11 @@
     document.getElementById('GridSearch').addEventListener('input', function () {
         var grid = new MvcGrid(document.querySelector('.mvc-grid'));
         grid.query.set('search', this.value);
-
+        grid.reload();
+    });
+    document.getElementById('clear').addEventListener('input', function () {
+        var grid = new MvcGrid(document.querySelector('.mvc-grid'));
+        document.getElementById("GridSearch").value = "";
         grid.reload();
     });
 </script>

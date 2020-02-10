@@ -11,6 +11,8 @@ namespace DocumentFinder.Models
         [Key]
         public Guid UniqueDistrID { get; set; }
 
+        public Guid UDocIDDistribution { get; set; }
+
         [Required]
         [StringLength(50)]
         public string DistributionOwner { get; set; }

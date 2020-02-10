@@ -9,22 +9,22 @@ namespace DocumentFinder.Models
     public partial class DOCUMENT_CONTENT
     {
         [Key]
-        [StringLength(10)]
-        public string UniqueContentID { get; set; }
+        public Guid UniqueContentID { get; set; }
+
+        public Guid UDocIDContact { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(50)]
         public string ContentNumber { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(50)]
         public string ContentDescription { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(50)]
         public string ContentVersion { get; set; }
 
-        [StringLength(10)]
-        public string ContentDateAssigned { get; set; }
+        public DateTime ContentDateAssigned { get; set; }
     }
 }

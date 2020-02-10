@@ -55,24 +55,16 @@ namespace DocumentFinder.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<DOCUMENT_CONTENT>()
-                .Property(e => e.UniqueContentID)
-                .IsFixedLength();
-
-            modelBuilder.Entity<DOCUMENT_CONTENT>()
                 .Property(e => e.ContentNumber)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<DOCUMENT_CONTENT>()
                 .Property(e => e.ContentDescription)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<DOCUMENT_CONTENT>()
                 .Property(e => e.ContentVersion)
-                .IsFixedLength();
-
-            modelBuilder.Entity<DOCUMENT_CONTENT>()
-                .Property(e => e.ContentDateAssigned)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<DOCUMENT_DISTRIBUTION>()
                 .Property(e => e.DistributionOwner)

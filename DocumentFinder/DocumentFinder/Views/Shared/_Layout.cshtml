@@ -35,9 +35,11 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        <div class="container-fluid bg-dark">
+            <footer class="py-5" style="text-align:center">
+                <p class="m-0 text-center text-white small"><p style="color: #2b3990;">&copy; @DateTime.Now.Year - Management Company</p>
+            </footer>
+        </div>
     </div>
 
     <script src="~/Scripts/MvcGrid/mvc-grid.js"></script>

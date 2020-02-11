@@ -85,7 +85,7 @@ namespace DocumentFinder.Controllers
             {
                 db.Entry(dOCUMENT).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = dOCUMENT.UniqueDocID });
             }
             return View(dOCUMENT);
         }

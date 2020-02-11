@@ -4,103 +4,95 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details for Doc-@Model.DocID</h2>
 
-<div>
-    <h4>DOCUMENT</h4>
+
+<div class="form-horizontal">
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DocID)
-        </dt>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.UniqueDocID)
 
-        <dd>
-            @Html.DisplayFor(model => model.DocID)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocID, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocID, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DocType)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocType, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocType, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DocType)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocName, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocName, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DocName)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocManuf, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocManuf, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DocName)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocCatg, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocCatg, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DocManuf)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocWONum, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocWONum, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DocManuf)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocPONum, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocPONum, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DocCatg)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocDate, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocDate, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DocCatg)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocProjMgr, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocProjMgr, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DocWONum)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocEqpAmt, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocEqpAmt, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DocWONum)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DocDescr, htmlAttributes: new { @class = "text-right col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.DocDescr, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DocPONum)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DocPONum)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DocDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DocDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DocProjMgr)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DocProjMgr)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DocEqpAmt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DocEqpAmt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DocDescr)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DocDescr)
-        </dd>
-
-    </dl>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a href="@Url.Action("Edit", "Document", new { id = Model.UniqueDocID })" class="btn btn-primary">Update</a>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UniqueDocID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

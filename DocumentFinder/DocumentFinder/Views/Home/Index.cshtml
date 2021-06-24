@@ -4,18 +4,21 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Business Document Management</h2>
+<h2 class="text-center">Business Document Management</h2>
 
-<form style="display: flex;margin-bottom:10px;">
-    <input id="GridSearch" class="form-control" placeholder="Search" autocomplete = "off"/>
-    <input type="button" id="Clear" class="btn btn-primary mvc-grid-cancel" value="Reset" onClick="window.location.reload();" style="margin-left:10px;" />
-    <a href="@Url.Action("Create", "Document")" class="btn btn-success " style="margin-left:10px;">Create</a>
-
+<form >
+    <div class="input-group">
+        <input type="text" class="form-control" id="GridSearch" placeholder="Search" autocomplete="off" aria-describedby="basic-addon2"/>
+        <div class="input-group-append">
+            <input class="btn btn-outline-secondary" type="button" id="Clear" value="Reset" onClick="window.location.reload();" />
+            @*<a href="window.location.reload();" class="btn btn-outline-secondary">Reload</a>*@
+            <a href="@Url.Action("Create", "Document")" class="btn btn-outline-secondary">Create</a>
+            <a href="@(Url.Action("ExportIndex", "Excel") + "?" + ViewContext.HttpContext.Request.QueryString)" class="btn btn-outline-secondary">Export</a>
+        </div>
+    </div>
 </form>
-
-
-
-@Html.AjaxGrid(Url.Action("IndexGrid"))
+<br />
+@Html.AjaxGrid(Url.Action("IndexGrid"), new { id = "doc-ajax-grid" })
 
 <script>
     document.getElementById('GridSearch').addEventListener('input', function () {

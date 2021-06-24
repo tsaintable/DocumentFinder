@@ -8,12 +8,31 @@
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("scripts", required: false)
 
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Content/MvcGrid/mvc-grid.css" rel="stylesheet">
-
+    
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background:#2b3990;">
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="@Url.Action("Index", "Home")">Document Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--<nav class="navbar navbar-fixed-top justify-content-between"--> @*style="background:#2b3990;"*@
+    <!-->
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,27 +40,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Document Finder", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Document Finder", "Index", "Home", new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })</li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>-->
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <div class="container-fluid bg-dark">
-            <footer class="py-5" style="text-align:center">
-                <p class="m-0 text-center text-white small"><p style="color: #2b3990;">&copy; @DateTime.Now.Year - Management Company</p>
-            </footer>
-        </div>
+        <footer class="container-fluid py-5" style="text-align:center">
+            <p class="m-0 text-center text-white small"><p style="color: #2b3990;">&copy; @DateTime.Now.Year - Management Company</p>
+        </footer>
     </div>
 
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/MvcGrid/mvc-grid.js"></script>
     <script>
         [].forEach.call(document.getElementsByClassName('mvc-grid'), function (element) {

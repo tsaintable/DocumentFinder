@@ -4,117 +4,123 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>DOCUMENT</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocID, new { htmlAttributes = new { @class = "form-control" } })
+<div class="form-horizontal">
+    <h4>Create Record</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.UniqueDocID)
+    @* ROW 1 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Document ID", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Document ID" } })
                 @Html.ValidationMessageFor(model => model.DocID, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocType, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Document Type", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocType, new { htmlAttributes = new { @class = "form-control", @placeholder = "Document Type" } })
                 @Html.ValidationMessageFor(model => model.DocType, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocName, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @* ROW 2 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Document Name", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Document Name" } })
                 @Html.ValidationMessageFor(model => model.DocName, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocManuf, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocManuf, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Manufacturer", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocManuf, new { htmlAttributes = new { @class = "form-control", @placeholder = "Manufacturer" } })
                 @Html.ValidationMessageFor(model => model.DocManuf, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocCatg, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocCatg, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @* ROW 3 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Document Category", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocCatg, new { htmlAttributes = new { @class = "form-control", @placeholder = "Document Category" } })
                 @Html.ValidationMessageFor(model => model.DocCatg, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocWONum, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocWONum, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Work Order", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocWONum, new { htmlAttributes = new { @class = "form-control", @placeholder = "Work Order" } })
                 @Html.ValidationMessageFor(model => model.DocWONum, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocPONum, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocPONum, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @* ROW 4 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Purchase Order", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocPONum, new { htmlAttributes = new { @class = "form-control", @placeholder = "Purchase Order" } })
                 @Html.ValidationMessageFor(model => model.DocPONum, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocDate, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Project Date", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project Date" } })
                 @Html.ValidationMessageFor(model => model.DocDate, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocProjMgr, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocProjMgr, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @* ROW 5 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Project Manager", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocProjMgr, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project Manager" } })
                 @Html.ValidationMessageFor(model => model.DocProjMgr, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocEqpAmt, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocEqpAmt, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Project Amount", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocEqpAmt, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project Amount" } })
                 @Html.ValidationMessageFor(model => model.DocEqpAmt, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DocDescr, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DocDescr, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    @* ROW 6 *@
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            @Html.Label("Equipment Description", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.EditorFor(model => model.DocDescr, new { htmlAttributes = new { @class = "form-control", @placeholder = "Equipment Description" } })
                 @Html.ValidationMessageFor(model => model.DocDescr, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Create</a>
+    </div>
 </div>
+    }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

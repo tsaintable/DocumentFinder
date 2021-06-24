@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DocumentFinder.Models.DOCUMENT_DISTRIBUTION>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UDocIDDistribution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistributionOwner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistributionLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistributionAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DistributionDateAssigned)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UDocIDDistribution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistributionOwner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistributionLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistributionAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DistributionDateAssigned)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UniqueDistrID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UniqueDistrID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UniqueDistrID })
+        </td>
+    </tr>
+}
+
+</table>

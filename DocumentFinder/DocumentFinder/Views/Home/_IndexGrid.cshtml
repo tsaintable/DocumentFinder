@@ -9,7 +9,7 @@
     .Grid(Model)
     .Build(columns =>
     {
-        columns.Add(model => model.DocID).Titled("Type");
+        columns.Add(model => model.DocID).Titled("DocID");
         columns.Add(model => DetailsHelper(model)).Titled("");
         columns.Add(model => model.DocType).Titled("Type");
         columns.Add(model => model.DocName).Titled("Name");
@@ -19,12 +19,13 @@
         columns.Add(model => model.DocPONum).Titled("PO");
         columns.Add(model => model.DocDate).Titled("Date").Formatted("{0:d}");
         columns.Add(model => model.DocProjMgr).Titled("ProjMgr");
-        columns.Add(model => model.DocEqpAmt).Titled("Amount");
+        columns.Add(model => model.DocEqpAmt).Titled("Amount").Formatted("{0:C}");
         columns.Add(model => model.DocDescr).Titled("Description");
 
     })
     .Empty("No data found.")
     .Filterable()
+    .Id("doc-ajax-grid")
     .Sortable()
     .Pageable(pager =>
     {

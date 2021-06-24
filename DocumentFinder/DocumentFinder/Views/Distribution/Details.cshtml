@@ -1,0 +1,58 @@
+﻿@model DocumentFinder.Models.DOCUMENT_DISTRIBUTION
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DOCUMENT_DISTRIBUTION</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UDocIDDistribution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDocIDDistribution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistributionOwner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistributionOwner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistributionLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistributionLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistributionAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistributionAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistributionDateAssigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistributionDateAssigned)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UniqueDistrID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

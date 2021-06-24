@@ -27,12 +27,18 @@ namespace DocumentFinder.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DOCUMENT dOCUMENT = db.DOCUMENTs.Find(id);
-            if (dOCUMENT == null)
+            //DOCUMENT dOCUMENT = db.DOCUMENTs.Find(id);
+            AModel am = new AModel()
+            {
+                DOC = db.DOCUMENTs.Find(id),
+                IE_D_CONTENT = db.DOCUMENT_CONTENT.Where(x => x.UDocIDContact == id),
+                IE_D_DISTRIB = db.DOCUMENT_DISTRIBUTION.Where(x => x.UDocIDDistribution == id)
+            };
+            if (am == null)
             {
                 return HttpNotFound();
             }
-            return View(dOCUMENT);
+            return View(am);
         }
 
         // GET: Document/Create

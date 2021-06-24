@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DocumentFinder.Models.DOCUMENT_CONTENT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UDocIDContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentVersion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContentDateAssigned)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UDocIDContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentVersion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContentDateAssigned)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UniqueContentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UniqueContentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UniqueContentID })
+        </td>
+    </tr>
+}
+
+</table>

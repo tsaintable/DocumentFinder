@@ -1,0 +1,64 @@
+﻿@model DocumentFinder.Models.DOCUMENT_DISTRIBUTION
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DOCUMENT_DISTRIBUTION</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UDocIDDistribution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDocIDDistribution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistributionOwner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistributionOwner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistributionLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistributionLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistributionAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistributionAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistributionDateAssigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistributionDateAssigned)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,58 @@
+﻿@model DocumentFinder.Models.DOCUMENT_CONTENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DOCUMENT_CONTENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UDocIDContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDocIDContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentDateAssigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentDateAssigned)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UniqueContentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

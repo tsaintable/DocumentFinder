@@ -1,98 +1,191 @@
-﻿@model DocumentFinder.Models.DOCUMENT
+﻿@model DocumentFinder.Models.AModel
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details for Doc-@Model.DocID</h2>
+<h2>Details for Doc-@Model.DOC.DocID</h2>
 
 
 <div class="form-horizontal">
+    @*<h4>Edit Record</h4>*@
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.UniqueDocID)
+    @Html.HiddenFor(model => model.DOC.UniqueDocID)
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocID, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocID, new { htmlAttributes = new { @class = "form-control" } })
+    @* ROW 1 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Document ID", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocID, new { htmlAttributes = new { @class = "form-control", @placeholder = "Document ID" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            @Html.Label("Document Type", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocType, new { htmlAttributes = new { @class = "form-control", @placeholder = "Document Type" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocType, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
+    @* ROW 2 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Document Name", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Document Name" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocName, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocType, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocType, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Manufacturer", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocManuf, new { htmlAttributes = new { @class = "form-control", @placeholder = "Manufacturer" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocManuf, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
+    @* ROW 3 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Document Category", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocCatg, new { htmlAttributes = new { @class = "form-control", @placeholder = "Document Category" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocCatg, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocName, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocName, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Work Order", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocWONum, new { htmlAttributes = new { @class = "form-control", @placeholder = "Work Order" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocWONum, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
+    @* ROW 4 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Purchase Order", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocPONum, new { htmlAttributes = new { @class = "form-control", @placeholder = "Purchase Order" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocPONum, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocManuf, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocManuf, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Project Date", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project Date" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocDate, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
+    @* ROW 5 *@
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            @Html.Label("Project Manager", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocProjMgr, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project Manager" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocProjMgr, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocCatg, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocCatg, new { htmlAttributes = new { @class = "form-control" } })
+        <div class="form-group col-md-6">
+            @Html.Label("Project Amount", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocEqpAmt, new { htmlAttributes = new { @class = "form-control", @placeholder = "Project Amount" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocEqpAmt, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocWONum, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocWONum, new { htmlAttributes = new { @class = "form-control" } })
+    @* ROW 6 *@
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            @Html.Label("Equipment Description", htmlAttributes: new { @class = "control-label font-weight-bold" })
+            <div class="">
+                @Html.DisplayFor(model => model.DOC.DocDescr, new { htmlAttributes = new { @class = "form-control", @placeholder = "Equipment Description" } })
+                @Html.ValidationMessageFor(model => model.DOC.DocDescr, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
-
     <div class="form-group">
-        @Html.LabelFor(model => model.DocPONum, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocPONum, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocDate, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocDate, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocProjMgr, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocProjMgr, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocEqpAmt, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocEqpAmt, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DocDescr, htmlAttributes: new { @class = "text-right col-md-2" })
-        <div class="col-md-10">
-            @Html.DisplayFor(model => model.DocDescr, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <a href="@Url.Action("Edit", "Document", new { id = Model.UniqueDocID })" class="btn btn-primary">Update</a>
-        </div>
+        @*<input type="submit" value="Create" class="btn btn-primary" />*@
+        <a href="@Url.Action("Edit", "Document", new { id = Model.DOC.UniqueDocID })" class="btn btn-secondary">Edit</a>
     </div>
 </div>
+<br />
 
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="input-group justify-content-between">
+    <h3>Content</h3>
+    <button class="btn btn-secondary float-right" id="CreateContentRecordDialog">Insert</button>
+</div>
+@*<div class="model" tabindex="-1"></div>*@
+@(Html
+    .Grid(Model.IE_D_CONTENT)
+    .Build(columns =>
+    {
+        columns.Add(model => model.ContentNumber).Titled("Number");
+        columns.Add(model => model.ContentDescription).Titled("Description");
+        columns.Add(model => model.ContentVersion).Titled("Version");
+        columns.Add(model => model.ContentDateAssigned).Titled("Date").Formatted("{0:d}");
+
+    })
+    .Empty("No data found.")
+    //.Filterable()
+    .Id("content-ajax-grid")
+    .Sortable()
+    .Attributed(new { id = "ContentTable" })
+)
+@*@Html.Partial("");*@
+
+<br />
+@*<form>
+    <div class="input-group justify-content-between">
+        <h3>Distribution</h3>
+        <input class="btn btn-secondary float-right" id="create-content-record-dialog" value="Insert" type="button" />
+    </div>
+</form>*@
+
+@(Html
+    .Grid(Model.IE_D_DISTRIB)
+    .Build(columns =>
+    {
+        columns.Add(model => model.DistributionOwner).Titled("Owner");
+        columns.Add(model => model.DistributionLocation).Titled("Location");
+        columns.Add(model => model.DistributionAmount).Titled("Amount").Formatted("{0:C}");
+        columns.Add(model => model.DistributionDateAssigned).Titled("Date").Formatted("{0:d}");
+
+    })
+    .Empty("No data found.")
+    //.Filterable()
+    .Id("content-ajax-grid")
+    .Sortable()
+    .Attributed(new { id = "ContentTable" })
+)
+@* JQuery for CRUD (Content and Distribution tables) *@
+
+
+<script>
+    $("#CreateContentRecordDialog").dialog(function () {
+        //$.dialog(function () {
+
+        //})
+    })
+</script>
